@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Galeri Foto & Video</title>
+
+  <!-- Font lucu (opsional) -->
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --pink:#ff7eb3;
+      --bg:#fff0f5;
+    }
+    *{box-sizing: border-box;}
+    body{
+      margin:0; padding:24px;
+      font-family:'Baloo 2', system-ui, sans-serif;
+      background:var(--bg);
+      color:#8a1452;
+    }
+    .container{max-width:980px; margin:0 auto;}
+    h1{margin:0 0 8px; text-align:center; color:var(--pink);}
+    p.lead{margin:0 0 24px; text-align:center;}
+
+    /* Grid responsif untuk foto & video */
+    .media-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap:14px;
+    }
+
+    /* Kartu media */
+    .card{
+      background:#fff;
+      border-radius:14px;
+      padding:10px;
+      box-shadow:0 6px 20px rgba(255,126,179,.25);
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .card:hover{
+      transform:translateY(-2px);
+      box-shadow:0 10px 28px rgba(255,126,179,.35);
+    }
+    .caption{
+      margin-top:8px;
+      text-align:center;
+      font-size:14px;
+      color:#b1075f;
+    }
+
+    /* Gambar */
+    .card img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      border-radius:10px;
+      aspect-ratio: 3 / 4; /* bikin rapi; boleh diubah */
+      display:block;
+    }
+
+    /* Video */
+    .card video{
+      width:100%;
+      height:100%;
+      border-radius:10px;
+      display:block;
+      aspect-ratio: 16 / 9; /* rasio layar lebar */
+      background:#000;
+    }
+
+    /* Bagian terpisah untuk foto & video (opsional) */
+    .section-title{
+      margin:26px 0 12px;
+      font-weight:600;
+      color:#d91476;
+      text-align:center;
+      letter-spacing:.3px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>💖 Galeri Kenangan Kita 💖</h1>
+    <p class="lead">Kumpulan foto & video favorit—biar bisa nostalgia kapan pun 😊</p>
+
+    <!-- ===== Foto ===== -->
+    <h2 class="section-title">📷 Foto</h2>
+    <div class="media-grid">
+      <div class="card">
+        <img src="media/foto 5.jpg" alt="Foto 1 - di agro wisata" />
+        <div class="caption">Lebaran Idul Fitri</div>
+      </div>
+      <div class="card">
+        <img src="media/foto 6.jpg" alt="Foto 2 - seusai dari RS PKU" />
+        <div class="caption">Festival Balon</div>
+      </div>
+      <div class="card">
+        <img src="media/foto 7.jpg" alt="Foto 3 - senja bareng" />
+        <div class="caption">Warmindo Moments</div>
+      </div>
+      <div class="card">
+        <img src="media/foto 8.jpg" alt="Foto 4 - jalan sore" />
+        <div class="caption">Ngopi</div>
+      </div>
+      <div class="card">
+        <img src="media/foto 9.jpg" alt="Foto 5 - candid lucu" />
+        <div class="caption">Candid lucu 😆</div>
+      </div>
+      <div class="card">
+        <img src="media/foto 10.jpg" alt alt="Foto 6 - favoritku" />
+        <div class="caption">Katun💗</div>
+      </div>
+    </div>
+
+    <!-- ===== Video ===== -->
+    <h2 class="section-title">🎬 Video</h2>
+    <div class="media-grid">
+      <div class="card">
+        <video controls preload="metadata" playsinline>
+          <source src="media/video 1.mp4" type="video/mp4" />
+          
+        </video>
+        <div class="caption">Video 1 — Couple</div>
+      </div>
+      <div class="card">
+        <video controls preload="metadata" playsinline>
+          <source src="media/video 2.mp4" type="video/mp4" />
+        </video>
+        <div class="caption">Video 2 — Anam House</div>
+      </div>
+      <div class="card">
+        <video controls preload="metadata" playsinline>
+          <source src="media/video 3.mp4" type="video/mp4" />
+        
+        <div class="caption">Video 3 — Prank </div>
+      </div>
+    </div>
+  </div>
+  <div style="text-align: center; margin-top: 20px;">
+        <a href="halaman6.html" style="
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: pink;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        ">
+            Next ➝
+        </a>
+    </div>
+</body>
+</html>
+

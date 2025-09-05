@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cerita Kita - Form</title>
+  <style>
+    body { font-family: 'Baloo 2', cursive, sans-serif; background: #fff0f5; text-align: center; padding: 30px; color: #a1005d; }
+    .form-container { max-width: 500px; margin: 0 auto; background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 8px 20px rgba(255, 126, 179, 0.3); }
+    h1 { color: #ff4da6; }
+    input, textarea { width: 100%; padding: 10px; margin: 8px 0; border-radius: 6px; border: 1px solid #ffb6d9; font-size: 16px; }
+    button { background: #ff4da6; color: white; border: none; padding: 12px; width: 100%; border-radius: 6px; font-size: 18px; cursor: pointer; }
+    button:hover { background: #e60073; }
+    #status { margin-top: 10px; font-weight: bold; color: green; }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h1>💕 Cerita Kita 💕</h1>
+    <p>Isi jujur ya sayang, jawabannya rahasia 💌</p>
+
+    <form id="myForm">
+      <input type="text" name="kenangan" placeholder="Kenangan favorit kita?" required>
+      <textarea name="sayang" rows="3" placeholder="Hal yang kamu nggak suka dari aku?" required></textarea>
+      <textarea name="harapan" rows="3" placeholder="Harapan kamu buat kita ke depan?" required></textarea>
+      <button type="submit">Kirim 💖</button>
+    </form>
+
+    <p id="status"></p>
+  </div>
+
+  <script>
+    const form = document.getElementById("myForm");
+    const status = document.getElementById("status");
+
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+
+      // Ambil nilai form
+      const kenangan = this.kenangan.value;
+      const sayang = this.sayang.value;
+      const harapan = this.harapan.value;
+
+      // Ambil jawaban lama dari LocalStorage
+      let allResponses = JSON.parse(localStorage.getItem("ceritaKitaResponses")) || [];
+
+      // Tambahkan jawaban baru
+      allResponses.push({kenangan, sayang, harapan, waktu: new Date().toLocaleString()});
+
+      // Simpan kembali ke LocalStorage
+      localStorage.setItem("ceritaKitaResponses", JSON.stringify(allResponses));
+
+      status.innerText = "Makasih sayang 💕 Jawabanmu sudah tersimpan rahasia.";
+      this.reset();
+    });
+  </script>
+</body>
+</html>
